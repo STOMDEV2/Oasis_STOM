@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="../css/animate.css" />
+	<link rel="stylesheet" type="text/css" href="../css/creationMasque.css" />
+        
+	<style type="text/css">
+		/* .systab .tab => les onglet */
+		.systab .tab {
+		  padding: 2px 10px;
+		  margin-right: 5px;
+		  color: #000;
+		  background: #fff;
+		  border: 1px solid #000;
+		  cursor: pointer;
+		}
+		/* .systab .tab:hover => les onglets survolés */
+		.systab .tab:hover {
+		  background: #b8efa1;
+		  color: #487f31;
+		  border-color: #487f31;
+		}
+		/* .systab .tab.selected => les onglets sélectionnés */
+		.systab .tab.selected{
+		  color: #ccc;
+		  background: #333;
+		}
+		/* .systab .contents => les conteneurs des contenus associés aux onglets  */
+		.systab .contents {
+		  margin-top: 1px;
+		  margin-bottom: 1px;
+		  color: #000;
+		  background: #fff;
+		  border: 1px solid #000;
+		  padding: 10px;
+		}
+		/* style des onglets si ils sont à gauche ou à droite */
+		.systab.s_float .tab,.systab.s_float .tab {
+		  display: block;
+		  margin: 5px;
+		}
+		/* flottement des conteneurs si les onglets sont à gauche où à droite */
+		.systab.s_float .tabs,.systab.s_float .contents {
+		  float: left;
+		}
+	</style>
+</head>
+<body>
+	 <div class="table-responsive">
+                    <table id="maskTable" class="table table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <th class="cell1">Position</th>
+                                <th class="cell2">Libellé</th>
+                                <th class="cell3">Propriétés</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cell1">1</td>
+                                <td class="cell2"><input type="text" value="bixMeow"></td>
+                                <td class="cell3"><input type="checkbox" name="selection" id="selection"></td>
+                            </tr>
+                        </tbody></table>
+                </div>
+
+
+	<div class="systab">
+	  <div>
+	    
+	  </div>
+	  <div class="selected">
+	    <span>Mon onglet 2</span>
+	    Mon contenu 2
+	  </div>
+	  <div>
+	    <span>Mon onglet 3</span>
+	    Mon contenu 3
+	  </div>
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script>
+		$(function() {
+		    // clic sur un onglet
+		    var d = function() {
+		        // si l'onglet est déjà actif, ne rien faire
+		        if ($(this).is(".selected")) return;
+		        // affiche le contenu correspondant et on met l'onglet en sélectionné
+		        var a = $(this).closest(".systab");
+		        a.find(".selected").removeClass("selected").filter(".content")[a.is(".s_slide") ? "slideUp" : a.is(".s_fade") ? "fadeOut" : "hide"](+((a.attr("class") || "").match(/^[sS]*(?:^|s)s_trans([0-9]+)(?:s|$)[sS]*$/) || ["", 500])[1]);
+		        $(this).addClass("selected").data("content").addClass("selected").stop(!0, !0)[a.is(".s_slide") ? "slideDown" : a.is(".s_fade") ? "fadeIn" : "show"](+((a.attr("class") || "").match(/^[sS]*(?:^|s)s_trans([0-9]+)(?:s|$)[sS]*$/) || ["", 500])[1])
+		    };
+		    // pour chacun des systèmes d'onglets
+		    $("div.systab").each(function() {
+		        var a = $("> div", this).detach(),
+		            c = this,
+		            b;
+		        // on ajoute le conteneur d'onglet avant ou après ( si s_bottom )
+		        $(this).html('<div class="' + ($(this).is(".s_bottom") ? "contents" : "tabs") + '"></div><div class="' + ($(this).is(".s_bottom") ?
+		            "tabs" : "contents") + '"></div>');
+		        $(a).each(function() {
+		            b = $(this).children(":first");
+		            b.is("span") ? (
+		                $("> div.tabs", c).append($(b).addClass("tab").data("content", $(this))), $(this).addClass("content").data("tab", b)) : $(this).remove()
+		        });
+		        $("> div.contents", this).append(a);
+		        b = $(".content:first,.content.selected", this).last();
+		        $(b).addClass("selected").siblings().hide();
+		        $(b).data("tab").addClass("selected")
+		    }).on("click", ".tab", d).filter(".s_hover").on("mouseenter", ".tab", d)
+		});
+	</script>
+</body>
+</html>

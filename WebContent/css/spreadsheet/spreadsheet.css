@@ -1,0 +1,1169 @@
+/*	STRUCTURE TEMPLATE	*/
+.spreadSheetContainer
+{
+	border: 1px solid #DDD;
+	position: relative;
+	
+	cursor: default;
+	
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+.spreadSheetElement
+{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+/* 	height: 100%; */
+}
+
+
+
+
+
+
+/*	CELL WIDTH HANDLING	*/
+/* .SPCell:not(.leftHeader):not(.initial):not(:nth-child(2)) */
+/* { */
+/* 	min-width: 200px !important; */
+/* } */
+/* .SPCell.header:not(.leftHeader):not(.initial):not(:nth-child(2)) */
+/* { */
+/* 	min-width: 200px !important; */
+/* 	width: 200px; */
+/* } */
+.SPCell.leftHeader, .SPCell.initial
+{
+	width: 70px;
+}
+.SPCell:nth-child(2)
+{
+	width: 140px;
+}
+.SPCell:nth-child(3)
+{
+	width: 130px;
+}
+
+
+
+
+
+
+
+.startingContext
+{
+	font-weight: bold;
+}
+
+.contextMenu
+{
+	position: absolute;
+	display: none;
+	z-index: 9999;
+}
+
+.contextItem
+{
+	cursor: pointer;
+}
+
+.autocompleteContainer
+{
+	display: none;
+	
+	position: absolute;
+	max-height: 250px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	z-index: 1;
+}
+
+.autocompleteHeader
+{
+	height: 20px;
+	text-align: center;
+}
+
+.autocompleteHeaderElement
+{
+	height: 20px;
+}
+
+.autocompleteElement
+{
+	height: 20px;
+	width: 100%;
+}
+
+.header
+{
+	background-color: #EEE;
+	position: relative;
+	
+	text-align: center;
+}
+
+.topHeader
+{
+	cursor: url(../../img/spreadsheet/downArrow75.png) 8 20, auto;
+}
+
+.leftHeader
+{
+	cursor: url(../../img/spreadsheet/rightArrow75.png) 20 8, auto;
+}
+
+.resize
+{
+	position: absolute;
+	display: block !important;
+}
+
+.leftResize
+{
+	top: 0px;
+	left: 0px;
+	width: 5px;
+	height: 100%;
+}
+
+.rightResize
+{
+	top: 0px;
+	right: 0px;
+	width: 5px;
+	height: 100%;
+}
+
+.topResize
+{
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 5px;
+}
+
+.bottomResize
+{
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 5px;
+}
+
+.resizeTopHeader
+{
+	cursor: w-resize;
+}
+
+.resizeLeftHeader
+{
+	cursor: n-resize;
+}
+
+.moveElement
+{
+	background: url("../../img/spreadsheet/move.png") no-repeat top right / 100% 100%;
+	height: 10px;
+	width: 10px;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: move;
+}
+
+.line
+{
+/* 	display: table; */
+/*     table-layout: fixed; */
+    
+	display: inline-block;
+	vertical-align: top;
+   	width:100%;
+    height:25px;
+}
+
+.line:nth-child(n+2) .SPCell
+{
+	border-top: 1px solid #CCC;
+}
+
+.line .SPCell:not(.resize)
+{
+	float: left;
+/*     display: table-cell; */
+}
+
+.line .SPCell:not(.resize):nth-child(n+2)
+{
+    border-left: 1px solid #CCC;
+}
+
+.cell
+{
+	position: relative;
+}
+
+.SPCell
+{
+    padding: 0px 2px;
+    height: 100%;
+}
+
+.selectedCell
+{	
+	box-sizing: border-box;
+	/*border: 2px solid #5292F7;*/
+	
+	/*background-color: rgba(0, 255, 0, 0.2) !important;*/
+	background: #FFF linear-gradient(to bottom, rgba(181, 209, 255, 0.34) 0px, rgba(181, 209, 255, 0.34) 100%) repeat scroll 0% 0%;
+}
+
+.cursor
+{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	z-index: 999;
+	display: none;
+}
+
+.rightCursor
+{
+	background: url("../../img/spreadsheet/rightArrow.png") no-repeat top right / 100% 100%;
+}
+
+.downCursor
+{
+	background: url("../../img/spreadsheet/downArrow.png") no-repeat top right / 100% 100%;
+}
+
+/*	TOOLBAR	*/
+#toolbar
+{
+	height: 40px;
+	border: 1px solid #DDD;
+	margin-bottom: 5px;
+	padding: 2px;
+}
+
+#tools
+{
+	display: inline-block;
+	position: relative;
+	float: left;
+	height: 100%;
+}
+
+.formulaContainer
+{
+	height: 100%;
+}
+
+.toolbarItem
+{
+	width: 20px;
+	height: 20px;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	margin-left: 5px;
+	float: left;
+}
+
+.toolbarFill
+{
+	background: url("../../img/spreadsheet/bgColor.png") no-repeat top right / 100% 100%;
+}
+
+.toolbarFontColor
+{
+	background: url("../../img/spreadsheet/fontColor.png") no-repeat top right / 100% 100%;
+}
+
+.toolbarAlignLeft
+{
+	background: url("../../img/spreadsheet/alignLeft.png") no-repeat top right / 100% 100%;
+}
+
+.toolbarAlignCenter
+{
+	background: url("../../img/spreadsheet/alignCenter.png") no-repeat top right / 100% 100%;
+}
+
+.toolbarAlignRight
+{
+	background: url("../../img/spreadsheet/alignRight.png") no-repeat top right / 100% 100%;
+}
+
+.toolbarAlignJustify
+{
+	background: url("../../img/spreadsheet/alignJustify.png") no-repeat top right / 100% 100%;
+}
+
+.toolbarBold
+{
+	background: url("../../img/spreadsheet/bold.png") no-repeat top right / 100% 100%;
+}
+
+.toolbarUnderline
+{
+	background: url("../../img/spreadsheet/underline.png") no-repeat top right / 100% 100%;
+}
+.toolbarItalic
+{
+	background: url("../../img/spreadsheet/italic.png") no-repeat top right / 100% 100%;
+}
+
+.toolbarBorderLeft
+{
+	background: url("../../img/spreadsheet/borderLeft.png") no-repeat top right / 100% 100%;
+}
+.toolbarBorderTop
+{
+	background: url("../../img/spreadsheet/borderTop.png") no-repeat top right / 100% 100%;
+}
+.toolbarBorderRight
+{
+	background: url("../../img/spreadsheet/borderRight.png") no-repeat top right / 100% 100%;
+}
+.toolbarBorderBottom
+{
+	background: url("../../img/spreadsheet/borderBottom.png") no-repeat top right / 100% 100%;
+}
+.toolbarBorderTopBottom
+{
+	background: url("../../img/spreadsheet/borderTopBottom.png") no-repeat top right / 100% 100%;
+}
+.toolbarBorderLeftRight
+{
+	background: url("../../img/spreadsheet/borderLeftRight.png") no-repeat top right / 100% 100%;
+}
+
+.toolbarFormula
+{
+	height: 100% !important;
+	display: inline !important;
+}
+
+/*	CELL / LINE STYLING	*/
+.spreadSheetContainer select, .spreadSheetContainer input
+{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.spreadSheetContainer span
+{
+	background-color: transparent !important;
+	
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+	
+/* 	position: absolute; */
+/* 	top: 50% !important; */
+/* 	transform: translateY(-50%); */
+}
+
+
+
+/*	BORDERS	*/
+.bordersPopup
+{
+	display: none;
+	width: 110px;
+	position: absolute;
+	border: 1px solid #DDD;
+	background-color: #EFEFEF;
+	padding: 2px;
+	z-index: 9999;
+}
+
+.borderPopupElementContainer
+{
+	width: 100%;
+	height: 15px;
+	position: relative;
+}
+.borderPopupElementContainer:hover
+{
+	background-color: white;
+}
+
+.borderPopupElement
+{
+	width: 100%;
+	height: 3px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.noBorderBorderLeft
+{
+	border-left: none !important;
+}
+.noBorderBorderRight
+{
+	border-right: none !important;
+}
+.noBorderBorderTop
+{
+	border-top: none !important;
+}
+.noBorderBorderBottom
+{
+	border-bottom: none !important;
+}
+
+
+
+
+.dotted
+{
+	border-top: 3px dotted black !important;
+}
+.dottedBorderLeft
+{
+	border-left: 3px dotted black !important;
+}
+.dottedBorderTop
+{
+	border-top: 3px dotted black !important;
+}
+.dottedBorderBottom
+{
+	border-bottom: 3px dotted black !important;
+}
+.dottedBorderRight
+{
+	border-right: 3px dotted black !important;
+}
+
+
+.dashed
+{
+	border-top: 3px dashed black !important;
+}
+.dashedBorderLeft
+{
+	border-left: 3px dashed black !important;
+}
+.dashedBorderTop
+{
+	border-top: 3px dashed black !important;
+}
+.dashedBorderBottom
+{
+	border-bottom: 3px dashed black !important;
+}
+.dashedBorderRight
+{
+	border-right: 3px dashed black !important;
+}
+
+
+.solid
+{
+	border-top: 3px solid black !important;
+}
+.solidBorderLeft
+{
+	border-left: 3px solid black !important;
+}
+.solidBorderTop
+{
+	border-top: 3px solid black !important;
+}
+.solidBorderBottom
+{
+	border-bottom: 3px solid black !important;
+}
+.solidBorderRight
+{
+	border-right: 3px solid black !important;
+}
+
+.solidThin
+{
+	border-top: 1px solid black !important;
+}
+.solidThinBorderLeft
+{
+	border-left: 1px solid black !important;
+}
+.solidThinBorderTop
+{
+	border-top: 1px solid black !important;
+}
+.solidThinBorderBottom
+{
+	border-bottom: 1px solid black !important;
+}
+.solidThinBorderRight
+{
+	border-right: 1px solid black !important;
+}
+
+
+.spreadSheetBorder
+{
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+}
+
+
+/* .double */
+/* { */
+/* 	border-top: 3px double black !important; */
+/* } */
+/* .doubleBorderLeft */
+/* { */
+/* 	border-left: 3px double black !important; */
+/* } */
+/* .doubleBorderTop */
+/* { */
+/* 	border-top: 3px double black !important; */
+/* } */
+/* .doubleBorderBottom */
+/* { */
+/* 	border-bottom: 3px double black !important; */
+/* } */
+/* .doubleBorderRight */
+/* { */
+/* 	border-right: 3px double black !important; */
+/* } */
+
+
+
+
+/* .groove */
+/* { */
+/* 	border-top: 3px groove black !important; */
+/* } */
+/* .grooveBorderLeft */
+/* { */
+/* 	border-left: 3px groove black !important; */
+/* } */
+/* .grooveBorderTop */
+/* { */
+/* 	border-top: 3px groove black !important; */
+/* } */
+/* .grooveBorderBottom */
+/* { */
+/* 	border-bottom: 3px groove black !important; */
+/* } */
+/* .grooveBorderRight */
+/* { */
+/* 	border-right: 3px groove black !important; */
+/* } */
+
+
+
+/* .ridge */
+/* { */
+/* 	border-top: 3px ridge black !important; */
+/* } */
+/* .ridgeBorderLeft */
+/* { */
+/* 	border-left: 3px ridge black !important; */
+/* } */
+/* .ridgeBorderTop */
+/* { */
+/* 	border-top: 3px ridge black !important; */
+/* } */
+/* .ridgeBorderBottom */
+/* { */
+/* 	border-bottom: 3px ridge black !important; */
+/* } */
+/* .ridgeBorderRight */
+/* { */
+/* 	border-right: 3px ridge black !important; */
+/* } */
+
+
+
+/* .inset */
+/* { */
+/* 	border-top: 3px inset black !important; */
+/* } */
+/* .insetBorderLeft */
+/* { */
+/* 	border-left: 3px inset black !important; */
+/* } */
+/* .insetBorderTop */
+/* { */
+/* 	border-top: 3px inset black !important; */
+/* } */
+/* .insetBorderBottom */
+/* { */
+/* 	border-bottom: 3px inset black !important; */
+/* } */
+/* .insetBorderRight */
+/* { */
+/* 	border-right: 3px inset black !important; */
+/* } */
+
+
+
+/* .outset */
+/* { */
+/* 	border-top: 3px outset black !important; */
+/* } */
+/* .outsetBorderLeft */
+/* { */
+/* 	border-left: 3px outset black !important; */
+/* } */
+/* .outsetBorderTop */
+/* { */
+/* 	border-top: 3px outset black !important; */
+/* } */
+/* .outsetBorderBottom */
+/* { */
+/* 	border-bottom: 3px outset black !important; */
+/* } */
+/* .outsetBorderRight */
+/* { */
+/* 	border-right: 3px outset black !important; */
+/* } */
+
+
+
+.white
+{
+	background: white;
+	background-color: transparent;
+	color: white !important;
+}
+
+
+.sandybrown
+{
+	background: sandybrown;
+	background-color: sandybrown;
+	color: sandybrown !important;
+}
+
+.brown
+{
+	background: brown;
+	background-color: brown;
+	color: brown !important;
+}
+
+.darkGreen
+{
+	background: darkGreen;
+	background-color: darkGreen;
+	color: darkGreen !important;
+}
+
+.darkBlue
+{
+	background: darkBlue;
+	background-color: darkBlue;
+	color: darkBlue !important;
+}
+
+.darkRed
+{
+	background: darkRed;
+	background-color: darkRed;
+	color: darkRed !important;
+}
+
+.orange
+{
+	background: orange;
+	background-color: orange;
+	color: orange !important;
+}
+
+.darkkhaki
+{
+	background: darkkhaki;
+	background-color: darkkhaki;
+	color: darkkhaki !important;
+}
+
+.lawngreen
+{
+	background: lawngreen;
+	background-color: lawngreen;
+	color: lawngreen !important;
+}
+
+.violet
+{
+	background: rgb(102, 102, 153);
+	background-color: rgb(102, 102, 153);
+	color: rgb(102, 102, 153) !important;
+}
+
+.black
+{
+	background: #222;
+	background-color: #222;
+	color: #222;
+}
+
+.blue
+{
+	background: blue;
+	background-color: blue;
+	color: blue !important;
+}
+
+.red
+{
+	background: red;
+	background-color: red;
+	color: red !important;
+}
+
+.green
+{
+	background: green;
+	background-color: green;
+	color: green !important;
+}
+
+.grey
+{
+	background: grey;
+	background-color: grey;
+	color: grey !important;
+}
+
+
+
+
+
+
+
+/*	BORDER LEFT	*/
+.whiteBorderLeft
+{
+	border-left: 1px solid white !important;
+}
+
+.sandybrownBorderLeft
+{
+	border-left: 1px solid sandybrown !important;
+}
+
+.brownBorderLeft
+{
+	border-left: 1px solid brown !important;
+}
+
+.darkGreenBorderLeft
+{
+	border-left: 1px solid darkGreen !important;
+}
+
+.darkBlueBorderLeft
+{
+	border-left: 1px solid darkBlue !important;
+}
+
+.darkRedBorderLeft
+{
+	border-left: 1px solid darkRed !important;
+}
+
+.orangeBorderLeft
+{
+	border-left: 1px solid orange !important;
+}
+
+.darkkhakiBorderLeft
+{
+	border-left: 1px solid darkkhaki !important;
+}
+
+.lawngreenBorderLeft
+{
+	border-left: 1px solid lawngreen !important;
+}
+
+.violetBorderLeft
+{
+	border-left: 1px solid rgb(102, 102, 153) !important;
+}
+
+.blackBorderLeft
+{
+	border-left: 1px solid #222 !important;
+}
+
+.blueBorderLeft
+{
+	border-left: 1px solid blue !important;
+}
+
+.redBorderLeft
+{
+	border-left: 1px solid red !important;
+}
+
+.greenBorderLeft
+{
+	border-left: 1px solid green !important;
+}
+
+.greyBorderLeft
+{
+	border-left: 1px solid grey !important;
+}
+
+
+
+
+
+/*	BORDER TOP	*/
+.whiteBorderTop
+{
+	border-top: 1px solid white !important;
+}
+
+.sandybrownBorderTop
+{
+	border-top: 1px solid sandybrown !important;
+}
+
+.brownBorderTop
+{
+	border-top: 1px solid brown !important;
+}
+
+.darkGreenBorderTop
+{
+	border-top: 1px solid darkGreen !important;
+}
+
+.darkBlueBorderTop
+{
+	border-top: 1px solid darkBlue !important;
+}
+
+.darkRedBorderTop
+{
+	border-top: 1px solid darkRed !important;
+}
+
+.orangeBorderTop
+{
+	border-top: 1px solid orange !important;
+}
+
+.darkkhakiBorderTop
+{
+	border-top: 1px solid darkkhaki !important;
+}
+
+.lawngreenBorderTop
+{
+	border-top: 1px solid lawngreen !important;
+}
+
+.violetBorderTop
+{
+	border-top: 1px solid rgb(102, 102, 153) !important;
+}
+
+.blackBorderTop
+{
+	border-top: 1px solid #222 !important;
+}
+
+.blueBorderTop
+{
+	border-top: 1px solid blue !important;
+}
+
+.redBorderTop
+{
+	border-top: 1px solid red !important;
+}
+
+.greenBorderTop
+{
+	border-top: 1px solid green !important;
+}
+
+.greyBorderTop
+{
+	border-top: 1px solid grey !important;
+}
+
+
+
+
+
+
+
+/* /*	BORDER RIGHT	*/ */
+/* .sandybrownBorderRight */
+/* { */
+/* 	border-right: 1px solid sandybrown; */
+/* } */
+
+/* .brownBorderRight */
+/* { */
+/* 	border-right: 1px solid brown; */
+/* } */
+
+/* .darkGreenBorderRight */
+/* { */
+/* 	border-right: 1px solid darkGreen; */
+/* } */
+
+/* .darkBlueBorderRight */
+/* { */
+/* 	border-right: 1px solid darkBlue; */
+/* } */
+
+/* .darkRedBorderRight */
+/* { */
+/* 	border-right: 1px solid darkRed; */
+/* } */
+
+/* .orangeBorderRight */
+/* { */
+/* 	border-right: 1px solid orange; */
+/* } */
+
+/* .darkkhakiBorderRight */
+/* { */
+/* 	border-right: 1px solid darkkhaki; */
+/* } */
+
+/* .lawngreenBorderRight */
+/* { */
+/* 	border-right: 1px solid lawngreen; */
+/* } */
+
+/* .violetBorderRight */
+/* { */
+/* 	border-right: 1px solid rgb(102, 102, 153); */
+/* } */
+
+/* .blackBorderRight */
+/* { */
+/* 	border-right: 1px solid #222; */
+/* } */
+
+/* .blueBorderRight */
+/* { */
+/* 	border-right: 1px solid blue; */
+/* } */
+
+/* .redBorderRight */
+/* { */
+/* 	border-right: 1px solid red; */
+/* } */
+
+/* .greenBorderRight */
+/* { */
+/* 	border-right: 1px solid green; */
+/* } */
+
+/* .greyBorderRight */
+/* { */
+/* 	border-right: 1px solid grey; */
+/* } */
+
+
+
+
+
+
+/* /*	BORDER BOTTOM	*/ */
+/* .sandybrownBorderBottom */
+/* { */
+/* 	border-bottom: 1px solid sandybrown; */
+/* } */
+
+/* .brownBorderBottom */
+/* { */
+/* 	border-bottom: 1px solid brown; */
+/* } */
+
+/* .darkGreenBorderBottom */
+/* { */
+/* 	border-bottom: 1px solid darkGreen; */
+/* } */
+
+/* .darkBlueBorderBottom */
+/* { */
+/* 	border-bottom: 1px solid darkBlue; */
+/* } */
+
+/* .darkRedBorderBottom */
+/* { */
+/* 	border-bottom: 1px solid darkRed; */
+/* } */
+
+/* .orangeBorderBottom */
+/* { */
+/* 	border-bottom: 1px solid orange; */
+/* } */
+
+/* .darkkhakiBorderBottom */
+/* { */
+/* 	border-bottom: 1px solid darkkhaki; */
+/* } */
+
+/* .lawngreenBorderBottom */
+/* { */
+/* 	border-bottom: 1px solid lawngreen; */
+/* } */
+
+/* .violetBorderBottom */
+/* { */
+/* 	border-bottom: 1px solid rgb(102, 102, 153); */
+/* } */
+
+/* .blackBorderBottom */
+/* { */
+/* 	border-bottom: 1px solid #222; */
+/* } */
+
+/* .blueBorderBottom */
+/* { */
+/* 	border-bottom: 1px solid blue; */
+/* } */
+
+/* .redBorderBottom */
+/* { */
+/* 	border-bottom: 1px solid red; */
+/* } */
+
+/* .greenBorderBottom */
+/* { */
+/* 	border-bottom: 1px solid green; */
+/* } */
+
+/* .greyBorderBottom */
+/* { */
+/* 	border-bottom: 1px solid grey; */
+/* } */
+
+
+
+
+
+
+
+
+/*	ALIGNMENTS	*/
+.left
+{
+	text-align: left;
+}
+
+.center
+{
+	text-align: center;
+}
+
+.right
+{
+	text-align: right;
+}
+
+.justify
+{
+	text-align: justify;
+}
+
+.bold
+{
+	font-weight: bold;
+}
+
+.italic
+{
+	font-style: italic;
+}
+
+.underline
+{
+	text-decoration: underline;
+}
+
+/*	IMAGES	*/
+.images
+{
+	height: 30px;
+}
+
+/*	COLOUR PICKET	*/
+div.colorPicker-picker
+{ 
+	height: 16px;
+	width: 16px;
+	padding: 0 !important;
+	border: 1px solid #DDD;
+	background: url(arrow.gif) no-repeat top right;
+	cursor: pointer;
+	line-height: 16px;
+	font-size:0.75em;
+	font-weight:bold;
+	text-align: center;
+}
+
+div.colorPicker-palette
+{
+	display: none;
+	width: 110px;
+	position: absolute;
+	border: 1px solid #DDD;
+	background-color: #EFEFEF;
+	padding: 2px;
+	z-index: 9999;
+}
+
+div.colorPicker_hexWrap {width: 100%; float:left }
+div.colorPicker_hexWrap label {font-size: 95%; color: #2F2F2F; margin: 5px 2px; width: 25%}
+div.colorPicker_hexWrap input {margin: 5px 2px; padding: 0; font-size: 95%; border: 1px solid #000; width: 65%; }
+
+div.colorPicker-swatch
+{
+	height: 12px;
+	width: 12px;
+	border: 1px solid #DDD;
+	margin: 2px;
+	float: left;
+	cursor: pointer;
+	line-height: 12px;
+}
+
+.selectedBorder
+{
+	background-color: #5292F7;
+	position: absolute;
+}
+
+.editable
+{
+	background: #FFF linear-gradient(to bottom, rgba(181, 209, 255, 0.34) 0px, rgba(181, 209, 255, 0.34) 100%) repeat scroll 0% 0%;
+}
+
+.editableFilled
+{
+	background: #FFF;
+}

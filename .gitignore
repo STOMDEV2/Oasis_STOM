@@ -1,0 +1,6 @@
+*.class
+src/fr/stcg/oasis/servlets/grid/SaveGridCommentServlet.java
+src/fr/stcg/oasis/servlets/mask/CreateMaskServlet.java
+src/fr/stcg/oasis/servlets/mask/CreateMaskServlet.java
+src/fr/stcg/oasis/servlets/grid/SaveGridCommentServlet.java
+/target/

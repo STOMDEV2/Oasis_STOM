@@ -1,0 +1,26 @@
+.tool
+{
+	width: 34px;
+	height: 34px;
+	float: right;
+
+	cursor: pointer;
+}
+
+.ascSort
+{
+	background: url("../../../img/calculation/arrowDown.png") no-repeat top right / 100% 100% !important;
+}
+
+.descSort
+{
+	background: url("../../../img/calculation/arrowUp.png") no-repeat top right / 100% 100% !important;
+}
+
+.filter
+{
+	width: 20px;
+	height: 20px;
+	
+	background: url("../../../img/calculation/filter.png") no-repeat top right / 100% 100%;
+}

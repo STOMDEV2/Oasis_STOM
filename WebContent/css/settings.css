@@ -1,0 +1,43 @@
+.wells-content {
+	padding-bottom: 3%;
+	margin-top: 1%;
+}
+
+.wells-content-separator {
+	border-color : #2e6da4;
+}
+
+.wells-input {
+	width: 220px;
+}
+.add-button , .save-button {
+	width : 220px;
+}
+
+.addButton, .removeButton {
+    width: 34px;
+    margin-right: 5px;
+}
+
+.line-spacing-1 {
+	margin-top: 2%;
+	line-height: 2em;
+}
+
+.line-spacing-2 {
+	margin-top: 4%; 
+	line-height: 2em;
+}
+
+.wrapped-content
+{
+	word-wrap :  break-word;
+}
+
+.blue {
+	color : #337AB7;
+}
+
+.green {
+	color : #3C763D;
+}

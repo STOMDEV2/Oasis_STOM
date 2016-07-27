@@ -1,0 +1,31 @@
+.toolbar {
+	height: 100%;
+	width: 84px;
+	background: #e7e7e7;
+	border-right: 1px solid #e7e7e7;
+	position: fixed;
+	padding-top: 10px;
+	margin-top: 50px;
+}
+
+.grid-comments {
+	resize:vertical;
+	width: 100%;
+	min-height: 40px;
+}
+
+.button-toolbar {
+	font-size: 2.1em;
+}
+
+.modal-container {
+	display: none;
+	position: absolute;
+	top: 51px;
+	left: 84px;
+	height: calc(100% - 141px);
+	width: calc(100% - 84px);
+	background-color: rgba(191, 191, 191, 0.5);
+	z-index: 99999;
+	overflow: auto;
+}

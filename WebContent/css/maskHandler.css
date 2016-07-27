@@ -1,0 +1,164 @@
+#divDimensions {
+
+/*   height: 70px; */
+/*   padding:25px; */
+}
+
+.dimensionButton
+{
+	z-index: 100;
+	position: relative;
+/* 	top: 50%; */
+/* 	transform: translateY(-50%); */
+}
+
+#divMaskTable {
+  height : 50%;
+}
+
+#btnAddRow {
+  margin-top: 25px;
+}
+
+#dragArea {
+/*   height: 350px; */
+  bottom: 0px;
+}
+
+#dragArea p {
+  text-align: right;
+  clear: both;
+}
+
+#dragArea p span {
+  float: left;
+}
+
+.ui-autocomplete {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  display: none;
+  min-width: 160px;
+  _width: 160px;
+  padding: 4px 0;
+  margin: 2px 0 0 0;
+  list-style: none;
+  background-color: #ffffff;
+  border-color: #ccc;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+
+}
+
+.ui-menu-item > a.ui-corner-all {
+    display: block;
+    padding: 3px 15px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #555555;
+    white-space: nowrap;
+}
+ 
+.ui-widget-content .ui-state-focus {
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #f8f8f8;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    background-image: none;
+}
+
+.ui-helper-hidden-accessible { 
+    position: absolute; 
+    left: -9999px; 
+}
+
+.place_holder {
+        height: 20px;
+        background: #ddd;
+}
+
+.pagetab_drop {
+        background: #ddd;
+}
+
+
+
+.context-height {
+  height : 100px;
+
+}
+
+#btnSaveMask{
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+#btnAddRow:active , #btnAddRow:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+
+.cell-center {
+  text-align: center;
+}
+
+#maskTableTitle {
+  margin-top: 88px;
+}
+
+.cell-80{
+  width: 70px;
+}
+
+.button {
+  display    : inline-block;
+  text-align : center;
+  width      : 80px; 
+}
+
+.dimension-container {
+/* 	position: relative; */
+/*   	margin-top: 10px; */
+
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+.kill-padding-right {
+  padding-right: 0px !important;
+}
+
+.input-type-number {
+  width: 65px !important;
+}
+
+
+.wait-cursor {
+  cursor: url(../img/wait.png), wait;
+}
+
+hr {
+  border-top : 1px solid #555 !important;
+}

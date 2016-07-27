@@ -1,0 +1,21 @@
+.toolbarElement
+{
+	text-align: center;
+	
+	padding: 3px;
+}
+
+.toolbarElement:hover
+{
+	background-color: #D0D0D0;
+}
+
+.toolbarElementSelected
+{
+	background-color: #D0D0D0;
+}
+
+i
+{
+	cursor: default;
+}

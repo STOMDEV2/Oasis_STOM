@@ -1,0 +1,171 @@
+.selected
+{
+	color: blue !important;
+}
+
+.contextMenuSelected
+{
+	color: green;
+}
+
+span[name^='calcul_']
+{
+	font-style: italic;
+}
+
+.headerElement
+{
+	font-weight: bold;
+}
+
+.listContainer
+{
+	margin-left: 33px;
+}
+
+.calculContainer div
+{
+	color: black;
+}
+
+div.collapsed
+{
+	display: none;
+}
+
+.elementOver
+{
+	border: 2px dashed black;
+}
+
+.orderedScriptElementOverBefore
+{
+	padding-top: 2px;
+	border-top: 2px solid black;
+}
+.orderedScriptElementOverAfter
+{
+	padding-bottom: 2px;
+	border-bottom: 2px solid black;
+}
+
+
+.calculContainer
+{
+	-moz-user-select: none; 
+	-khtml-user-select: none; 
+	-webkit-user-select: none; 
+	-o-user-select: none; 
+	
+	cursor: default;
+}
+
+.collapseButton
+{
+	width: 22px;
+	margin-right: 10px;
+}
+
+.endElement
+{
+	margin-left: 10px;
+}
+
+#scriptName
+{
+	font-size: 17px;
+}
+#calculName
+{
+	font-size: 17px;
+}
+
+.treeElement
+{
+	text-align: left;
+	
+/* 	padding-right: 30px; */
+	padding-left: 10px;
+/* 	text-overflow: ellipsis; */
+/* 	white-space: nowrap; */
+/* 	overflow: hidden; */
+	
+/* 	display: block; */
+}
+.checkBoxTreeElement
+{
+	width: 22px;
+	height: 20px;
+	display: block;
+	
+	float: left;
+	position: relative;
+}
+.checkBoxTreeElement i
+{
+	display: block;
+	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	-webkit-transform: translateY(-50%) translateX(-50%);
+	width: 16px;
+	height: 16px;
+	border: 1px solid #AEAEAE;
+	border-radius: 2px;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15) inset;
+	background-color: #FFF;
+}
+.checkBoxTreeElement.selected i
+{
+	background-color: #11A911;
+	box-shadow: none;
+	border-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.popUpTreeContainer
+{	
+	padding: 10px;
+	
+	overflow: auto;
+	
+	display: none;
+	position: absolute;
+	z-index: 999999;
+	width: 500px;
+	max-width: 500px;
+	max-height: 500px;
+	min-height: 100px;
+	left: 50%;
+	top: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	-webkit-transform: translateY(-50%) translateX(-50%);
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 2px 2px 2px 2px;
+}
+
+.treeContainer
+{
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+}
+
+.selectableLine
+{
+	background-color: #DDD;
+}
+
+.treeCollapseButton 
+{
+	margin-right: 0px !important;
+}
