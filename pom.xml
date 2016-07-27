@@ -8,7 +8,7 @@
 	<repositories>
 		<repository>
 			<id>Essbase_prod_repo</id>
- 			<url>file://C:/.m2/repository</url> 
+ 			<url>file:///C:/.m2/repository</url> 
 		</repository>
 	</repositories>
 	<build>
