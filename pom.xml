@@ -5,13 +5,12 @@
 	<artifactId>fr.stcg.oasis</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-<!-- 	<repositories> -->
-<!-- 		<repository> -->
-<!-- 			<id>Essbase_prod_repo</id> -->
-<!--  			<url>C:\\Users\TALBI\.m2\repository</url> --> 
-<!-- 			<url>smb:\\localhost\repository</url> -->
-<!-- 		</repository> -->
-<!-- 	</repositories> -->
+	<repositories>
+		<repository>
+			<id>Essbase_prod_repo</id>
+ 			<url>file://C:/.m2/repository</url> 
+		</repository>
+	</repositories>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
