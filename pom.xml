@@ -8,7 +8,8 @@
 	<repositories>
 		<repository>
 			<id>Essbase_prod_repo</id>
-			<url>smb:\\192.168.24.2\Users\Administrator\.m2\repository\</url>
+<!-- 			<url>C:\\Users\TALBI\.m2\repository</url> -->
+			<url>C:\Users\Administrator\.m2\repository</url>
 		</repository>
 	</repositories>
 	<build>
