@@ -1,4 +1,4 @@
-package fr.stcg.oasis.servlets.calculation;
+package fr.stcg.oasis.servlets.calculation; 
 
 import java.io.IOException;
 import java.io.OutputStream;

@@ -1,4 +1,4 @@
-package fr.stcg.oasis.beans;
+package fr.stcg.oasis.beans; 
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
