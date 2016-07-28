@@ -1,4 +1,4 @@
-﻿package fr.stcg.oasis.servlets.grid;
+package fr.stcg.oasis.servlets.grid;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-﻿package fr.stcg.oasis.servlets;
+package fr.stcg.oasis.servlets;
 
 import java.io.PrintWriter;
 import java.lang.reflect.Type;
