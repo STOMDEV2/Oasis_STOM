@@ -14,7 +14,7 @@ import org.apache.commons.beanutils.BeanUtils;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.Expose;
-import com.sun.istack.internal.Nullable;
+//import com.sun.istack.internal.Nullable;
 
 @Entity
 public class Style implements Serializable
@@ -39,7 +39,7 @@ public class Style implements Serializable
 	private String childrenStyle;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@Nullable
+//	@Nullable
 	private GridElement gridElement;
 	
 	
