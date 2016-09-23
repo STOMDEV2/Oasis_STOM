@@ -68,6 +68,19 @@ public class UserDaoImpl extends AbstractJpaDao<User> implements UserDao {
 			user.setProfile(DaoFactory.getProfileDao().findAll().get(0));
 			
 			this.add(user);
+			
+			// Add second user to the DB...
+			
+			User user2 = new User();
+			
+			user2.setLogin("test");
+			user2.setFirstname("testoLeRobot");
+			user2.setName("testeur");
+			user2.setEmail("test@stcg.fr");
+			user2.setTel("0606060606");
+			user2.setProfile(DaoFactory.getProfileDao().findAll().get(0));
+			
+			this.add(user2);
 		}
 		
 	}

@@ -26,12 +26,11 @@ public class MaskDaoImpl extends AbstractJpaDao<Mask> implements MaskDao {
 	private static final String SQL_UPDATE_STYLE = "UPDATE style(nomStyle,selector) VALUES(?,?) WHERE idStyle =?";
 	private static final String SQL_INSERT_STYLE = "INSERT INTO style(nomStyle,selector) VALUES(?,?)";
 	
-
 	public MaskDaoImpl() {
 		super(Mask.class);
 	}
 
-
+	
 	@Override
 	public ArrayList<Mask> findMaskByCube(String cube) throws SQLException {
 		// Init
@@ -55,8 +54,13 @@ public class MaskDaoImpl extends AbstractJpaDao<Mask> implements MaskDao {
     	}
 		
 	}
-
-
+	
+	public void deleteMaskById(){
+		
+	}
+	
+	
+	
 	@Override
 	public ArrayList<Mask> findMaskByUser(int idUser, Cube cube) throws SQLException {
 		// Init

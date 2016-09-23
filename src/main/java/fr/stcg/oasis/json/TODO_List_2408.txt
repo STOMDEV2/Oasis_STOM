@@ -1,0 +1,31 @@
+x Répondre à 10 offre de MOA business analyst KO
+
+x Finaliser la candidature pour la licence pro commerce des systèmes informatiques. KO
+
+x Trouver le client Hyperion .. pour le poste et le filer à Thomas. KO
+
+x Finaliser les deux composants WUI et modification de OASIS_STOM pour passer sous SpringMVC. KO
+
+	x Mise en place de SpringMVC dans Oasis_STOM
+
+	x Modifier les servlets
+		
+		x Remplacer les servlets login par des controlleurs spring login. KO
+		
+		x Remplacer les servlets masques par des controlleurs spring masques. KO
+		
+		x Remplacer les servlets grilles par des controlleurs spring grilles. KO
+		
+		x Remplacer les servlets calculs par des controlleurs spring calculs. KO
+
+x Faire le site Web de présentation du projet Shealthie avec infographie. KO
+
+x Footing 1H.. KO
+
+x Séance de musculation.. KO
+
+x Préparer l'entretien du jeudi. 
+
+x Répondre à l'offre consultant IT - Hermès. KO
+
+x Se coucher à 21H KO

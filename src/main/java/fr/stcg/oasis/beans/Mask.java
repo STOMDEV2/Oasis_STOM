@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -51,30 +52,29 @@ public class Mask implements Serializable
 	@Expose
 	Date creationDate;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "author", nullable = false)
+	@ManyToOne(cascade = {CascadeType.MERGE}, fetch = FetchType.LAZY)
+	@JoinColumn(name = "author")
 	@Expose
 	User author;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(cascade = {CascadeType.REMOVE}, fetch = FetchType.LAZY)
 	@JoinColumn(name = "lastEditor")
 	@Expose
 	User lastEditor;
 	
-	
-	@OneToMany(mappedBy = "mask", orphanRemoval = true)
+	@OneToMany(cascade = {CascadeType.REMOVE}, mappedBy = "mask", orphanRemoval = true)
 	@Expose
 	Collection<ColumnContext> columnContext;
 	
-	@OneToMany(mappedBy = "mask", orphanRemoval = true)
+	@OneToMany(cascade = {CascadeType.REMOVE}, mappedBy = "mask", orphanRemoval = true)
 	@Expose
 	Collection<RowContext> rowContext;
 	
-	@OneToMany(mappedBy = "mask", orphanRemoval = true)
+	@OneToMany(cascade = {CascadeType.REMOVE}, mappedBy = "mask", orphanRemoval = true)
 	@Expose
 	Collection<HeaderDimension> headerContext;
 	
-	@OneToMany(mappedBy = "mask", orphanRemoval = true)
+	@OneToMany(cascade = {CascadeType.REMOVE}, mappedBy = "mask", orphanRemoval = true)
 	Collection<Grid> grids;
 	
 	public Mask()
@@ -203,9 +203,4 @@ public class Mask implements Serializable
 			
 	}
 
-	
-	
-	
-	
-	
 }

@@ -48,9 +48,6 @@ public class Style implements Serializable
 		
 	}
 	
-	
-	
-
 	public String getCellStyle() {
 		return cellStyle;
 	}

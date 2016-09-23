@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -40,11 +41,11 @@ public class Grid implements Serializable
 	@Expose
 	Date creationDate;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(cascade = {CascadeType.REMOVE}, fetch = FetchType.LAZY)
 	@Expose // pète tout dans grid 
 	Mask mask;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(cascade = {CascadeType.REMOVE}, fetch = FetchType.LAZY)
 	@JoinColumn(name="creator_id")
 	@Expose
 	User creator;

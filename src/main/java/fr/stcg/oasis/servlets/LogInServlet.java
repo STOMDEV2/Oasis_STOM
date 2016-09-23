@@ -79,7 +79,6 @@ public class LogInServlet extends HttpServlet
 					HashMap<String,String[]> credentialJSON = new HashMap<String, String[]>();
 					credentialJSON.put("credentials", credentials);
 					
-					
 					for(Entry<String, String[]> entry : credentialJSON.entrySet()) {
 					    String[] valeur = entry.getValue();
 					    
@@ -165,7 +164,6 @@ public class LogInServlet extends HttpServlet
 					{
 						user = DaoFactory.getUserDao().trouverUtilisateurParLogin( datas.get("login") );
 						userProfile = user.getProfile();
-						
 						System.out.println("userProfile" + userProfile.toString());
 					}
 					catch(Exception e)
